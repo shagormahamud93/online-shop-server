@@ -1,3 +1,5 @@
+import { categoryRouter } from "../app/modules/categories/categories.route";
+import { productRouter } from "../app/modules/product/product.route";
 import { userRouter } from "../app/modules/user/user.route";
 import { Router } from "express";
 
@@ -6,6 +8,14 @@ const moduleRoutes = [
   {
     path: "/auth",
     route: userRouter,
+  },
+  {
+    path: "/categories",
+    route: categoryRouter,
+  },
+  {
+    path: "/products",
+    route: productRouter,
   },
 ];
 
