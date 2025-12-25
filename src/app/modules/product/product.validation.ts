@@ -7,16 +7,16 @@ const createProductValidationSchema = z.object({
   rating: z.number().min(0).max(5).optional(),
   is_trending: z.boolean().optional(),
   brand_id: z.number().int(),
+  image: z.string().min(1),
+  description: z.string().min(1),
+  SKU: z.string().min(1),
+  tag: z.array(z.string()).optional(),
+  type: z.string().optional(),
+  topRated: z.boolean().optional(),
+  badge: z.string().optional(),
 });
 
-const updateProductValidationSchema = z.object({
-  title: z.string().min(1).max(150).optional(),
-  price: z.number().positive().optional(),
-  quantity: z.number().int().nonnegative().optional(),
-  rating: z.number().min(0).max(5).optional(),
-  is_trending: z.boolean().optional(),
-  brand_id: z.number().int().optional(),
-});
+const updateProductValidationSchema = createProductValidationSchema.partial();
 
 export const productValidation = {
   createProductValidationSchema,

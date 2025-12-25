@@ -1,3 +1,4 @@
+import { brandRouter } from "../app/modules/brands/brands.route";
 import { categoryRouter } from "../app/modules/categories/categories.route";
 import { productRouter } from "../app/modules/product/product.route";
 import { userRouter } from "../app/modules/user/user.route";
@@ -12,6 +13,10 @@ const moduleRoutes = [
   {
     path: "/categories",
     route: categoryRouter,
+  },
+  {
+    path: "/brands",
+    route: brandRouter,
   },
   {
     path: "/products",

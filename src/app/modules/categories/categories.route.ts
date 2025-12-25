@@ -15,21 +15,21 @@ router.get("/:id", categoryController.getSingleCategory);
  * Admin
  */
 router.post(
-  "/admin/category",
+  "/admin/create",
   userTokenVerify,
   validateRequest(categoryValidation.createCategoryValidationSchema),
   categoryController.createCategory
 );
 
 router.put(
-  "/admin/category/:id",
+  "/admin/update/:id",
   userTokenVerify,
   validateRequest(categoryValidation.updateCategoryValidationSchema),
   categoryController.updateCategory
 );
 
 router.delete(
-  "/admin/category/:id",
+  "/admin/delete/:id",
   userTokenVerify,
   categoryController.deleteCategory
 );
